@@ -10,6 +10,10 @@
  *  tengas disponible.
  */
 
+// Importamos la imagen como módulo para que Vite la incluya en el build.
+// Así funciona tanto en local como en producción (Vercel, etc.).
+import fotoNely from './images/nelly.jpeg'
+
 export const config = {
   // --- Persona a quien se recuerda ---
   nombre: 'Nely Graciela Ramírez Mejia',
@@ -20,10 +24,10 @@ export const config = {
     'Aunque ya no estés físicamente con nosotros, tu recuerdo y amor vivirán eternamente en nuestros corazones.',
 
   // --- Fotografía central ---
-  // Coloca tu imagen en la carpeta "public/" y referencia su ruta aquí.
-  // Ejemplo: './foto-nelly.jpg'  (recomendado: formato vertical/cuadrado, optimizado)
-  // Si se deja vacío, se mostrará un marco decorativo de reemplazo.
-  foto: 'src/images/nelly.jpeg',
+  // La imagen se importa arriba (import fotoNely from './images/nelly.jpeg').
+  // Para cambiarla: reemplaza el archivo en src/images/ o ajusta el import.
+  // Si se deja vacío (foto: ''), se mostrará un marco decorativo de reemplazo.
+  foto: fotoNely,
 
   // --- Sección de recuerdo ---
   mensajeRecuerdo:
