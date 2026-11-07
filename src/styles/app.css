@@ -1,0 +1,389 @@
+/* ============================================================
+   ESTILOS DE LA APLICACIÓN Y SUS SECCIONES
+   ============================================================ */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(217, 195, 154, 0.18), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(232, 221, 201, 0.25), transparent 45%),
+    var(--color-fondo);
+}
+
+/* ---------- Partículas / luces cálidas de fondo ---------- */
+.particulas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particula {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(199, 169, 112, 0.9), rgba(199, 169, 112, 0));
+  opacity: 0;
+  animation-name: flotar;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-105vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(253, 251, 247, 0.9), transparent 60%),
+    linear-gradient(180deg, var(--color-crema), var(--color-fondo));
+}
+
+.hero__velo {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 248, 235, 0.6), transparent 55%);
+  pointer-events: none;
+}
+
+.hero__contenido {
+  position: relative;
+  max-width: 640px;
+}
+
+.hero__memoria {
+  font-family: var(--fuente-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.78rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 0.8rem;
+}
+
+.hero__nombre {
+  font-size: clamp(2.6rem, 9vw, 4.6rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hero__adorno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.4rem auto 0.4rem;
+  color: var(--color-dorado);
+}
+
+.hero__adorno .linea {
+  height: 1px;
+  width: clamp(45px, 18vw, 100px);
+  background: linear-gradient(to right, transparent, var(--color-dorado-claro));
+}
+.hero__adorno .linea.derecha {
+  background: linear-gradient(to left, transparent, var(--color-dorado-claro));
+}
+.hero__adorno svg {
+  width: 26px;
+  height: 26px;
+}
+
+.hero__subtitulo {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: clamp(1.15rem, 4vw, 1.5rem);
+  color: var(--color-texto-suave);
+  margin-bottom: 2.2rem;
+}
+
+/* Marco de la fotografía */
+.hero__foto-marco {
+  position: relative;
+  width: clamp(200px, 60vw, 280px);
+  aspect-ratio: 4 / 5;
+  margin: 0 auto 2.2rem;
+}
+
+.hero__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 180px 180px 12px 12px;
+  box-shadow: var(--sombra-tarjeta);
+  border: 6px solid var(--color-crema);
+  position: relative;
+  z-index: 1;
+}
+
+.hero__foto--placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: linear-gradient(160deg, var(--color-beige), var(--color-fondo-alt));
+  color: var(--color-texto-suave);
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero__foto-icono {
+  width: 40px;
+  height: 40px;
+  color: var(--color-dorado);
+  margin-bottom: 0.4rem;
+}
+
+.hero__foto--placeholder span {
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+}
+.hero__foto--placeholder small {
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.hero__foto-halo {
+  position: absolute;
+  inset: -18px;
+  border-radius: 200px 200px 20px 20px;
+  background: radial-gradient(circle, rgba(199, 169, 112, 0.25), transparent 70%);
+  z-index: 0;
+  filter: blur(8px);
+}
+
+.hero__frase {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+  color: var(--color-titulo);
+  max-width: 500px;
+  margin: 0 auto 2.4rem;
+  line-height: 1.6;
+}
+
+.hero__boton svg {
+  animation: rebote 2.2s ease-in-out infinite;
+}
+
+@keyframes rebote {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ============================================================
+   RECUERDO
+   ============================================================ */
+
+.recuerdo {
+  background: var(--color-fondo-alt);
+}
+
+.recuerdo__mensaje {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.25rem, 3.6vw, 1.7rem);
+  line-height: 1.75;
+  color: var(--color-titulo);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   INFORMACIÓN / TARJETAS
+   ============================================================ */
+
+.informacion__titulo {
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  margin-bottom: 2.6rem;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 3vw, 1.6rem);
+  margin-bottom: 2.8rem;
+}
+
+.tarjeta {
+  background: var(--color-crema);
+  border: 1px solid rgba(199, 169, 112, 0.2);
+  border-radius: 18px;
+  padding: clamp(1.4rem, 4vw, 2rem) 1.4rem;
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion);
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.tarjeta__icono {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(199, 169, 112, 0.15), rgba(232, 221, 201, 0.4));
+  color: var(--color-dorado);
+}
+.tarjeta__icono svg {
+  width: 26px;
+  height: 26px;
+}
+
+.tarjeta__etiqueta {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta__valor {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+  color: var(--color-titulo);
+  font-weight: 500;
+}
+
+.tarjeta__valor--pendiente {
+  font-style: italic;
+  color: var(--color-dorado);
+  opacity: 0.85;
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   COMPARTIR
+   ============================================================ */
+
+.compartir {
+  background: var(--color-fondo-alt);
+}
+
+.compartir__texto {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  color: var(--color-titulo);
+  margin-bottom: 1.8rem;
+}
+
+.compartir__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.compartir__wa {
+  background: linear-gradient(135deg, #43c05a, #2fa347);
+  box-shadow: 0 8px 24px rgba(47, 163, 71, 0.35);
+}
+.compartir__wa:hover {
+  box-shadow: 0 12px 30px rgba(47, 163, 71, 0.45);
+}
+
+/* ============================================================
+   DESPEDIDA
+   ============================================================ */
+
+.despedida {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(253, 251, 247, 0.9), transparent 60%),
+    linear-gradient(180deg, var(--color-fondo), var(--color-crema));
+  padding-bottom: clamp(4rem, 10vw, 8rem);
+}
+
+.despedida__mensaje {
+  font-size: clamp(1.05rem, 3vw, 1.25rem);
+  color: var(--color-texto);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.despedida__firma {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  color: var(--color-titulo);
+  margin-bottom: 1.4rem;
+}
+
+.despedida__frase {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: clamp(1.15rem, 3.6vw, 1.5rem);
+  color: var(--color-dorado);
+}
+
+.despedida__flor {
+  width: 30px;
+  height: 30px;
+  color: var(--color-dorado);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 520px) {
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+  .compartir__botones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .compartir__botones .boton {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero__foto-marco {
+    width: 300px;
+  }
+}
