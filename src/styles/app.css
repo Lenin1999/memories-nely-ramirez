@@ -16,7 +16,7 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
   overflow: hidden;
 }
 
@@ -48,9 +48,71 @@
   }
 }
 
+/* ---------- Pétalos cayendo suavemente ---------- */
+.petalos {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.petalo {
+  position: absolute;
+  top: -40px;
+  width: var(--tam, 16px);
+  height: var(--tam, 16px);
+  color: rgba(199, 169, 112, 0.55);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: caer;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.petalo:nth-child(3n) {
+  color: rgba(217, 195, 154, 0.5);
+}
+.petalo:nth-child(4n) {
+  color: rgba(232, 221, 201, 0.55);
+}
+
+.petalo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(120, 100, 60, 0.12));
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(110vh) translateX(var(--deriva, 40px))
+      rotate(var(--giro, 240deg));
+    opacity: 0;
+  }
+}
+
 main {
   position: relative;
-  z-index: 1;
+}
+
+/* El contenido de cada sección va por encima de los pétalos/partículas,
+   pero los fondos de sección quedan por debajo para que el efecto
+   flotante se vea a través de toda la página. */
+.contenedor,
+.hero__contenido {
+  position: relative;
+  z-index: 3;
 }
 
 /* ============================================================

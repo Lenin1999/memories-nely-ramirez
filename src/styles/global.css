@@ -200,4 +200,9 @@ img {
     opacity: 1;
     transform: none;
   }
+  /* Ocultamos los elementos decorativos animados de fondo */
+  .petalos,
+  .particulas {
+    display: none;
+  }
 }

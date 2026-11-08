@@ -71,3 +71,50 @@ export function Particulas() {
     </div>
   )
 }
+
+/**
+ * Pétalos que caen suavemente meciéndose.
+ * Fondo decorativo sereno, acorde al tono conmemorativo.
+ */
+export function Petalos() {
+  const petalos = Array.from({ length: 16 })
+  return (
+    <div className="petalos" aria-hidden="true">
+      {petalos.map((_, i) => (
+        <span
+          key={i}
+          className="petalo"
+          style={{
+            left: `${(i * 6.4 + (i % 3) * 4) % 100}%`,
+            animationDelay: `${(i % 8) * 2.1}s`,
+            animationDuration: `${12 + (i % 6) * 3}s`,
+            // tamaños y giros variados para un movimiento más orgánico
+            '--tam': `${10 + (i % 4) * 4}px`,
+            '--giro': `${(i % 2 === 0 ? 1 : -1) * (180 + (i % 5) * 60)}deg`,
+            '--deriva': `${(i % 2 === 0 ? 1 : -1) * (30 + (i % 4) * 20)}px`,
+          }}
+        >
+          <PetaloSVG />
+        </span>
+      ))}
+    </div>
+  )
+}
+
+function PetaloSVG() {
+  // Pétalo simple en tonos cálidos, semitransparente.
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 2c5 3.5 7 8 5.5 12.5C16 19 13.5 21.5 12 22c-1.5-.5-4-3-5.5-7.5C5 10 7 5.5 12 2Z"
+        fill="currentColor"
+      />
+      <path
+        d="M12 4c0 6 0 12 0 17"
+        stroke="rgba(255,255,255,0.35)"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}

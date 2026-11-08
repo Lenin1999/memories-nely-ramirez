@@ -1,6 +1,6 @@
 import { config } from './config.js'
 import { useReveal } from './hooks/useReveal.js'
-import { Particulas } from './components/Decoracion.jsx'
+import { Particulas, Petalos } from './components/Decoracion.jsx'
 import Hero from './components/Hero.jsx'
 import Recuerdo from './components/Recuerdo.jsx'
 import Informacion from './components/Informacion.jsx'
@@ -15,6 +15,7 @@ export default function App() {
   return (
     <div className="app">
       <Particulas />
+      <Petalos />
       <main>
         <Hero config={config} />
         <Recuerdo config={config} />
