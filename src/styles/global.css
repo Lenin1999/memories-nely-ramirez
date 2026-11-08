@@ -9,11 +9,11 @@
   --color-fondo-alt: #f3ede1;
   --color-crema: #fdfbf7;
   --color-beige: #e8ddc9;
-  --color-dorado: #c7a970;
+  --color-dorado: #8a6a28;
   --color-dorado-claro: #d9c39a;
-  --color-texto: #4a443b;
-  --color-texto-suave: #7d7566;
-  --color-titulo: #574f42;
+  --color-texto: #1f1b14;
+  --color-texto-suave: #413b30;
+  --color-titulo: #241f16;
 
   /* Tipografías */
   --fuente-titulo: 'Cormorant Garamond', 'Georgia', serif;
@@ -42,7 +42,7 @@ body {
   color: var(--color-texto);
   background-color: var(--color-fondo);
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -58,7 +58,7 @@ h3 {
 }
 
 p {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 a {
