@@ -88,7 +88,7 @@ main {
   font-family: var(--fuente-texto);
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  font-size: 0.78rem;
+  font-size: 0.95rem;
   color: var(--color-texto-suave);
   margin-bottom: 0.8rem;
 }
@@ -124,8 +124,9 @@ main {
 .hero__subtitulo {
   font-family: var(--fuente-titulo);
   font-style: italic;
-  font-size: clamp(1.15rem, 4vw, 1.5rem);
-  color: var(--color-titulo);
+  font-size: clamp(1.4rem, 4.8vw, 1.85rem);
+  font-weight: 600;
+  color: var(--color-texto);
   margin-bottom: 2.2rem;
 }
 
@@ -172,7 +173,7 @@ main {
   font-size: 1.1rem;
 }
 .hero__foto--placeholder small {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   opacity: 0.8;
 }
@@ -189,9 +190,10 @@ main {
 .hero__frase {
   font-family: var(--fuente-titulo);
   font-style: italic;
-  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-  color: var(--color-titulo);
-  max-width: 500px;
+  font-size: clamp(1.4rem, 4.2vw, 1.75rem);
+  font-weight: 600;
+  color: var(--color-texto);
+  max-width: 520px;
   margin: 0 auto 2.4rem;
   line-height: 1.6;
 }
@@ -273,14 +275,14 @@ main {
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   color: var(--color-texto-suave);
   margin-bottom: 0.5rem;
 }
 
 .tarjeta__valor {
   font-family: var(--fuente-titulo);
-  font-size: clamp(1.1rem, 3vw, 1.35rem);
+  font-size: clamp(1.25rem, 3.4vw, 1.55rem);
   color: var(--color-titulo);
   font-weight: 500;
 }
@@ -289,7 +291,7 @@ main {
   font-style: italic;
   color: var(--color-dorado);
   font-family: var(--fuente-texto);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 /* ============================================================
@@ -334,7 +336,7 @@ main {
 }
 
 .despedida__mensaje {
-  font-size: clamp(1.05rem, 3vw, 1.25rem);
+  font-size: clamp(1.2rem, 3.4vw, 1.4rem);
   color: var(--color-texto);
   max-width: 600px;
   margin: 0 auto;

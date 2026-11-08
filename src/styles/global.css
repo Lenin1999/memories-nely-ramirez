@@ -134,11 +134,11 @@ img {
   justify-content: center;
   gap: 0.6rem;
   font-family: var(--fuente-texto);
-  font-weight: 400;
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.9rem 2rem;
+  padding: 0.95rem 2.1rem;
   border: none;
   border-radius: 50px;
   cursor: pointer;
